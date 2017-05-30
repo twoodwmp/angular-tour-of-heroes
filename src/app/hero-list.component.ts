@@ -2,6 +2,7 @@ import { Component, NgModule, OnInit } from '@angular/core';
 
 import { FormsModule }   from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { Router, RouterModule } from "@angular/router";
 
 import { Hero } from "./hero";
 import { HeroService } from './hero.service';
@@ -9,14 +10,14 @@ import { HeroService } from './hero.service';
 @Component({
   selector: 'my-hero-list',
   templateUrl: './hero-list.component.html',
-  styleUrls: ['./heroes.component.css']
+  styleUrls: ['./hero-list.component.css']
 })
 
 export class HeroListComponent implements OnInit  { 
   heroes: Hero[] = [];
   selectedHero: Hero;
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private router: Router) { }
   
   /// Initialization lifecycle hook
   ngOnInit(): void {
@@ -47,6 +48,10 @@ export class HeroListComponent implements OnInit  {
     if (hero) {
       this.selectedHero = hero;
     }
+  }
+
+  gotoHeroDetails(): void {
+    this.router.navigate(['/detail', this.selectedHero.id]);
   }
 
   getHeroList(): void {

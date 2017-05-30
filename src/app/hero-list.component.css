@@ -54,3 +54,16 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px
 }
+
+button {
+  font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  cursor: hand;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}

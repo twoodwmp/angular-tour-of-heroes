@@ -1,0 +1,17 @@
+<div id="heroDetails" *ngIf="hero">
+    <h4>{{hero.name}} details:</h4>
+    <div><label>ID* </label><input class="floatRight" readonly [(ngModel)]="hero.id"/></div>
+        <div>
+            <label>Name* </label>
+            <input class="floatRight" [(ngModel)]="hero.name" placeholder="Name" />
+        </div>
+        <div>
+            <label>Super Power </label>
+            <input class="floatRight" [(ngModel)]="hero.power" placeholder="Super Power" />
+        </div>
+        <div>
+            <label>Alter Ego </label>
+            <input class="floatRight" [(ngModel)]="hero.alterEgo" placeholder="Alter Ego" />
+        </div>
+    <button (click)="goBack()">Back</button>
+</div>

@@ -1,0 +1,56 @@
+.noHeroesText {
+  font-style: italic;
+  color: grey;
+}
+
+.selected {
+  background-color:rgb(202, 211, 215) !important;
+  color: white;
+}
+
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+
+.heroes li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: rgb(235, 235, 235);
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 5px;
+}
+
+.heroes li.selected:hover {
+  color: white;
+}
+
+.heroes li:hover {
+  background-color: lightblue;
+  left: .1em;
+  color: darkslategray;
+}
+
+.heroes .text {
+  position: relative;
+}
+
+.heroes .heroBadge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  background-color: rgb(96, 125, 139);
+  padding: .8em .7em 0 .7em;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px
+}

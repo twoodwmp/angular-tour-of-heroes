@@ -1,0 +1,33 @@
+h1 {
+  color: Black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 175%;
+}
+
+.floatRight {
+  float: right;
+}
+
+#heroDetails {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  max-width: 300px;
+  min-width: 250px;
+}
+
+#heroDetails div {
+  margin: 3px 0 3px 0;
+}
+
+input {
+  max-width: 95%;
+}
+
+input:read-only {
+  background-color: lightgray;
+}
+
+body {
+  font-family: Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+}

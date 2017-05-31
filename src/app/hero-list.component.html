@@ -1,14 +1,15 @@
 <h3>Hero Editor</h3>
-<input #newHero placeholder="Hero Name"
-    (keyup.enter)="btnNewHeroHandler(newHero.value); newHero.value=''"
-    (blur)="btnNewHeroHandler(newHero.value); newHero.value='' ">
+<input #name placeholder="Hero Name"
+    (keyup.enter)="btnNewHeroHandler(name.value); name.value=''"
+    (blur)="btnNewHeroHandler(name.value); name.value='' ">
 
-<button (click)="addHero(newHero.value)">Add Hero</button>
+<button (click)="btnNewHeroHandler(name.value); name.value=''">Add Hero</button>
 <p>Available heroes:</p>
 <p *ngIf="heroes.length === 0" class="noHeroesText">Heroes will be displayed here!</p>
 <ul class="heroes">
     <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="liSelectHeroHandler(hero)">
-    <span class="heroBadge"> {{hero.id}} </span> {{hero.name}}
+    <span class="heroBadge"> {{hero.id}} </span> <span>{{hero.name}}</span>
+    <button class="delete" (click)="deleteHero(hero); $event.stopPropagation()">x</button>
     </li>
 </ul>
 <div *ngIf="selectedHero">

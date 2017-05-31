@@ -6,11 +6,12 @@ import { Hero } from './hero'
     template: `
         <h1>{{title}}</h1>
         <nav>
-            <a routerLink="/heroes">Hero Editor</a>
-            <a routerLink="/dashboard">Hero Dashboard</a>
+            <a routerLink="/heroes" routerLinkActive="active">Hero Editor</a>
+            <a routerLink="/dashboard" routerLinkActive="active">Hero Dashboard</a>
         </nav>
         <router-outlet></router-outlet>
-    `
+    `,
+    styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {

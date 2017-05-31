@@ -30,10 +30,23 @@ export class HeroListComponent implements OnInit  {
   }
 
   /// pushes new hero onto hero list model
-  addHero(newHero: string) {
-    if (newHero) {
-      this.heroes.push(new Hero(this.heroes.length, newHero));
-    }
+  addHero(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.heroService.create(name)
+      .then(hero => {
+        this.heroes.push(hero);
+        this.selectedHero = null;
+      });
+  }
+
+  deleteHero(hero :Hero) : void {
+    this.heroService
+      .delete(hero.id)
+      .then(herolol => {
+        this.heroes = this.heroes.filter(h => h !== hero);
+        if (this.selectedHero === hero) {this.selectedHero = null}
+      });
   }
 
   /// Handler entry method for hero list selection
